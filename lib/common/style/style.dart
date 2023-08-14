@@ -5,6 +5,10 @@ class Styles {
   static const Color primary = Color(0xFFF7EEE9);
   static const Color brown = Color(0xFF917659);
   static const Color darkBrown = Color(0xFF8E765C);
+  static const Color background = Color(0xFFF7EEE9);
+
+  static const TextStyle txtGeneralGrey =
+      TextStyle(fontFamily: 'Poppins', fontSize: 12, color: Colors.grey);
 
   static const TextStyle txtGeneralWhite =
       TextStyle(fontFamily: 'Poppins', fontSize: 12, color: Colors.white);
@@ -14,6 +18,9 @@ class Styles {
 
   static const TextStyle txtGeneralBrownSmall =
       TextStyle(fontFamily: 'Poppins', fontSize: 10, color: Color(0xFF917659));
+
+  static const TextStyle txtGeneralBlackSmall =
+      TextStyle(fontFamily: 'Poppins', fontSize: 10, color: Colors.black);
 
   static const TextStyle txtGeneralBlack =
       TextStyle(fontFamily: 'Poppins', fontSize: 12, color: Color(0xFF302B27));
