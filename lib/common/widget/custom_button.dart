@@ -6,12 +6,12 @@ class CustomButton extends StatefulWidget {
   final Color buttonColor;
   final GestureTapCallback navigator;
   final TextStyle textStyle;
-  final double horizontal;
+  final double? horizontal;
   CustomButton(
       {Key? key,
       required this.buttonName,
       required this.navigator,
-      required this.horizontal,
+      this.horizontal,
       required this.buttonColor,
       required this.textStyle})
       : super(key: key);
@@ -32,7 +32,7 @@ class _CustomButtonState extends State<CustomButton> {
           backgroundColor: widget.buttonColor,
         ),
         child: Padding(
-          padding: EdgeInsets.symmetric(horizontal: widget.horizontal),
+          padding: EdgeInsets.symmetric(horizontal: widget.horizontal ?? 0),
           child: Text(
             widget.buttonName,
             style: widget.textStyle,
