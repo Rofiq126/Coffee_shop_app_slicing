@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
 class CustomAppBar extends StatefulWidget {
-  final String imagePath;
-  CustomAppBar({Key? key, required this.imagePath}) : super(key: key);
+  final Widget widget;
+  CustomAppBar({Key? key, required this.widget}) : super(key: key);
 
   @override
   State<CustomAppBar> createState() => _CustomAppBarState();
@@ -14,20 +14,24 @@ class _CustomAppBarState extends State<CustomAppBar> {
     Size size = MediaQuery.of(context).size;
     return Container(
       width: size.width,
-      height: size.height * 0.2,
+      height: size.height * 0.15,
       decoration: const BoxDecoration(color: Colors.white),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
-          Image(width: size.width * 0.05, image: AssetImage(widget.imagePath)),
-          Image(
-              width: size.width * 0.1,
-              image: const AssetImage('asset/icon/second_icon.png')),
-          Image(
-              width: size.width * 0.05,
-              image: AssetImage('asset/icon/drawer_icon.png')),
-        ],
+      child: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 20),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            widget.widget,
+            Image(
+                width: size.width * 0.4,
+                image: const AssetImage('asset/icon/second_icon.png')),
+            const Icon(
+              Icons.menu,
+              color: Colors.black,
+            )
+          ],
+        ),
       ),
     );
   }
