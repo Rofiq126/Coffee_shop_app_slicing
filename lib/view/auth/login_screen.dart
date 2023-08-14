@@ -1,6 +1,7 @@
 import 'package:barbershop_app/common/style/style.dart';
 import 'package:barbershop_app/common/widget/custom_button.dart';
 import 'package:barbershop_app/common/widget/custom_textField.dart';
+import 'package:barbershop_app/view/home_screen/home_screen.dart';
 import 'package:flutter/material.dart';
 
 class LoginScreen extends StatefulWidget {
@@ -18,6 +19,7 @@ class _LoginScreenState extends State<LoginScreen> {
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       backgroundColor: Styles.black,
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 40),
@@ -53,7 +55,10 @@ class _LoginScreenState extends State<LoginScreen> {
               child: CustomButton(
                   buttonName: 'LOG IN',
                   horizontal: 40,
-                  navigator: () {},
+                  navigator: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (_) => HomeScreen()));
+                  },
                   buttonColor: Styles.brown,
                   textStyle: Styles.txtGeneralWhite),
             ),
