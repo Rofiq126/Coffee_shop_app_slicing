@@ -19,15 +19,17 @@ class CustomTextField extends StatefulWidget {
 class _CustomTextFieldState extends State<CustomTextField> {
   @override
   Widget build(BuildContext context) {
-    return TextFormField(
-      controller: widget.controller,
-      style: Styles.txtGeneralWhite,
-      obscureText: widget.obsecure,
-      decoration: InputDecoration(
-          label: Text(
-        widget.label,
+    return Flexible(
+      child: TextFormField(
+        controller: widget.controller,
         style: Styles.txtGeneralWhite,
-      )),
+        obscureText: widget.obsecure,
+        decoration: InputDecoration(
+            label: Text(
+          widget.label,
+          style: Styles.txtGeneralWhite,
+        )),
+      ),
     );
   }
 }
