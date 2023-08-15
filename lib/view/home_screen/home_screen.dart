@@ -4,6 +4,7 @@ import 'package:barbershop_app/common/widget/custom_button.dart';
 import 'package:barbershop_app/view/home_screen/component/benner.dart';
 import 'package:barbershop_app/view/home_screen/component/carousel_service.dart';
 import 'package:barbershop_app/view/home_screen/component/data.dart';
+import 'package:barbershop_app/view/home_screen/component/list_bottom_barber.dart';
 import 'package:barbershop_app/view/home_screen/component/search_field.dart';
 import 'package:flutter/material.dart';
 
@@ -57,7 +58,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       const Text(
-                        'Welcome, Jhon',
+                        'Welcome, Michelle',
                         style: Styles.txtGeneralTitleBlack,
                       ),
                       const SizedBox(
@@ -84,67 +85,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   height: size.height * 0.28,
                   decoration: const BoxDecoration(color: Styles.brown),
                   child: CarouselService()),
-              Padding(
-                padding: const EdgeInsets.only(left: 30, top: 15, right: 30),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    const Text(
-                      'Availible Barbers',
-                      style: Styles.txtGeneralTitleWhite,
-                    ),
-                    ListView.builder(
-                        itemCount: 3,
-                        physics: const NeverScrollableScrollPhysics(),
-                        shrinkWrap: true,
-                        itemBuilder: (context, index) {
-                          return Column(
-                            children: [
-                              ListTile(
-                                leading: Container(
-                                  width: 40,
-                                  height: 40,
-                                  decoration: BoxDecoration(
-                                      color: Styles.brown,
-                                      borderRadius: BorderRadius.circular(100),
-                                      image: const DecorationImage(
-                                          image: NetworkImage(''))),
-                                ),
-                                title: const Text(
-                                  'Jeremy Steven',
-                                  style: Styles.txtGeneralWhite,
-                                ),
-                                subtitle: const Row(
-                                  children: [
-                                    Icon(
-                                      Icons.location_pin,
-                                      color: Styles.brown,
-                                      size: 15,
-                                    ),
-                                    SizedBox(
-                                      width: 5,
-                                    ),
-                                    Text(
-                                      '123 Barber St. London',
-                                      style: Styles.txtGeneralWhiteSmall,
-                                    )
-                                  ],
-                                ),
-                                trailing: CustomButton(
-                                    buttonName: 'BOOK',
-                                    navigator: () {},
-                                    buttonColor: Styles.black,
-                                    textStyle: Styles.txtGeneralWhite),
-                              ),
-                              const Divider(
-                                height: 16,
-                              )
-                            ],
-                          );
-                        })
-                  ],
-                ),
-              ),
+              ListBottomBarber()
             ],
           ),
         ),
