@@ -33,36 +33,45 @@ class _CarouselServiceState extends State<CarouselService> {
                 return Padding(
                   padding:
                       const EdgeInsets.symmetric(vertical: 15, horizontal: 10),
-                  child: Container(
-                    width: size.width * 0.3,
-                    height: 30,
-                    decoration: BoxDecoration(
-                        color: Colors.white,
-                        borderRadius: BorderRadius.circular(8)),
-                    child: Padding(
-                        padding: const EdgeInsets.all(8),
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          mainAxisSize: MainAxisSize.min,
-                          children: [
-                            Padding(
-                              padding: const EdgeInsets.all(20),
-                              child: Image.asset(
-                                databaseAsset.dataAsset[index].pathName,
-                                color: Styles.brown,
+                  child: InkWell(
+                    onTap: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (_) =>
+                                  databaseAsset.dataAsset[index].rounte));
+                    },
+                    child: Container(
+                      width: size.width * 0.3,
+                      height: 30,
+                      decoration: BoxDecoration(
+                          color: Colors.white,
+                          borderRadius: BorderRadius.circular(8)),
+                      child: Padding(
+                          padding: const EdgeInsets.all(8),
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            mainAxisSize: MainAxisSize.min,
+                            children: [
+                              Padding(
+                                padding: const EdgeInsets.all(20),
+                                child: Image.asset(
+                                  databaseAsset.dataAsset[index].pathName,
+                                  color: Styles.brown,
+                                ),
                               ),
-                            ),
-                            Text(
-                              databaseAsset.dataAsset[index].name,
-                              style: Styles.txtGeneralBlack,
-                            ),
-                            Text(
-                              databaseAsset.dataAsset[index].numberService,
-                              style: Styles.txtGeneralBlackSmall,
-                            )
-                          ],
-                        )),
+                              Text(
+                                databaseAsset.dataAsset[index].name,
+                                style: Styles.txtGeneralBlack,
+                              ),
+                              Text(
+                                databaseAsset.dataAsset[index].numberService,
+                                style: Styles.txtGeneralBlackSmall,
+                              )
+                            ],
+                          )),
+                    ),
                   ),
                 );
               }),
